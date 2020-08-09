@@ -136,3 +136,7 @@ dmypy.json
 
 # Cython debug symbols
 cython_debug/
+
+# Mosquitto certificates
+mosquitto_certificates/ca.key
+mosquitto_certificates/ca.crt
