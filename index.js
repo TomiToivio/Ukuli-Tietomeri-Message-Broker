@@ -15,9 +15,9 @@ const mongo_host = config.get('mongo.host');
 const mongo_port = config.get('mongo.port');
 const mongo_database = config.get('mongo.database');
 
-const MongoClient = require('mongodb').MongoClient;
-const assert = require('assert');
 const mongo_url = 'mongodb://' + mongo_user + ':' + mongo_password + '@' + mongo_host + ':' + mongo_port + '/' + mongo_database; 
+const MongoClient = require('mongodb').MongoClient(mongo_url);
+const assert = require('assert');
 
 mqtt_client.on('connect', function () {
     client.subscribe("ukuli/#");
