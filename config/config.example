@@ -1,0 +1,15 @@
+module.exports = {
+    mqtt : {
+        clientId: 'ukuliSimulator',              
+        hostname: '127.0.0.1',
+        port: 1883,
+        userName: 'ukuli',
+        password: 'ukuli',
+    },
+    mongodb: {
+        user: 'ukuli',
+        password: 'ukuli',
+        host: '127.0.0.1',
+        port: 27017,
+    }
+};
