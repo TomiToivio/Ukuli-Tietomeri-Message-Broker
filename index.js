@@ -9,15 +9,14 @@ const mqtt_password = config.get('mqtt.password');
 const mqtt = require('mqtt');
 const mqtt_client  = mqtt.connect('mqtt://' + mqtt_hostname + ":" + Number(mqtt_port));
 
-const mongo_user = config.get('mongo.user');
-const mongo_password = config.get('mongo.password');
-const mongo_host = config.get('mongo.host');
-const mongo_port = config.get('mongo.port');
-const mongo_database = config.get('mongo.database');
+const couch_user = config.get('couch.user');
+const couch_password = config.get('couch.password');
+const couch_host = config.get('couch.host');
+const couch_port = config.get('couch.port');
+const couch_database = config.get('couch.database');
 
-const MongoClient = require('mongodb').MongoClient;
-const mongo_url = 'mongodb://' + mongo_user + ':' + mongo_password + '@' + mongo_host + ':' + mongo_port; 
-const test = require('assert');
+const couch_url = 'http://' + couch_user + ':' + couch_password + '@' + couch_host + ':' + couch_port; 
+const nano = require('nano')(couch_url);
 
 mqtt_client.on('connect', function () {
     client.subscribe("ukuli/#");
@@ -26,17 +25,14 @@ mqtt_client.on('connect', function () {
 client.on('message', function (topic, message) {
   var topic = topic;
   var message = message;
-  mongodbSave(topic,message);
+  couchSave(topic,message);
 });
 
-function mongodbSave(topic,message) {
-    MongoClient.connect(mongo_url, function(err, client) {
-        const db = client.db(mongo_database);
-        db.collection('inserts').insertOne({a:1}, function(err, r) {
-          assert.equal(null, err);
-          assert.equal(1, r.insertedCount);
-          insertOne(doc, options);
-        });
-        client.close();
-    });    
+function couchSave(topic,message) {
+    var unixtime = new Date();
+    const tietomeri_couch = nano.use(couch_database);
+    var doc = { topic: topic, message: message, time: unixtime };
+    tietomeri_couch.insert(doc).then((body) => {
+        console.log(body);
+    });
 }

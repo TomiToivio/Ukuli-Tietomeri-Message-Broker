@@ -6,11 +6,11 @@ module.exports = {
         userName: 'ukuli',
         password: 'ukuli',
     },
-    mongodb: {
+    couch: {
         user: 'ukuli',
         password: 'ukuli',
         host: '127.0.0.1',
-        port: 27017,
+        port: 5984,
         database: 'tietomeri',
     }
 };
