@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/Ukuli-Data/Ukuli-Tietomeri-Message-Broker#readme",
   "dependencies": {
+    "assert": "^2.0.0",
     "bson-ext": "^2.0.5",
     "config-js": "^1.1.14",
     "kerberos": "^1.1.3",
