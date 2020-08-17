@@ -24,8 +24,8 @@ mqtt_client.on('connect', function () {
 });
  
 mqtt_client.on('message', function (topic, message) {
-  var topic = topic;
-  var message = message;
+  var topic = "" + topic + "";
+  var message = "" + message + "";
   console.log(topic);
   console.log(message);
   couchSave(topic,message);
