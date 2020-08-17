@@ -13,4 +13,8 @@ module.exports = {
         port: 5984,
         database: 'tietomeri',
     }
+    api: {
+        user: 'ukuli',
+        password: 'ukuli',
+    }
 };
