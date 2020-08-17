@@ -20,7 +20,7 @@ const nano = require('nano')(couch_url);
 
 mqtt_client.on('connect', function () {
     console.log("Connect");
-    client.subscribe("tietomeri/#");
+    mqtt_client.subscribe("tietomeri/#");
 });
  
 mqtt_client.on('message', function (topic, message) {
