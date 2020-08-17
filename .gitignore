@@ -116,4 +116,4 @@ dist
 .pnp.*
 
 # Config
-conf/app_PRODUCTION.js
+config.js
