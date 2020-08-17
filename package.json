@@ -25,6 +25,7 @@
     "async": "^3.2.0",
     "body-parser": "^1.19.0",
     "bson-ext": "^2.0.5",
+    "config": "^3.3.1",
     "config-js": "^1.1.14",
     "express": "^4.17.1",
     "kerberos": "^1.1.3",

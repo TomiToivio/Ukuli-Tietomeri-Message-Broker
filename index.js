@@ -1,5 +1,7 @@
+process.env.NODE_ENV = 'PRODUCTION';
 var Config = require('config-js');
-var config = new Config('./config/config.js');
+var config = new Config('./conf/app_##');
+
 const mqtt_client_id = config.get('mqtt.clientId');
 const mqtt_hostname = config.get('mqtt.hostname');
 const mqtt_port = config.get('mqtt.port');
