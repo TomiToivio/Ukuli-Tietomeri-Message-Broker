@@ -1,0 +1,33 @@
+{
+  "name": "ukuli-tietomeri-message-broker",
+  "version": "1.0.0",
+  "description": "Handling MQTT messages.",
+  "main": "index.js",
+  "scripts": {
+    "test": "test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ukuli-Data/Ukuli-Tietomeri-Message-Broker.git"
+  },
+  "keywords": [
+    "MQTT",
+    "IoT"
+  ],
+  "author": "Tomi Toivio",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/Ukuli-Data/Ukuli-Tietomeri-Message-Broker/issues"
+  },
+  "homepage": "https://github.com/Ukuli-Data/Ukuli-Tietomeri-Message-Broker#readme",
+  "dependencies": {
+    "assert": "^2.0.0",
+    "async": "^3.2.0",
+    "bson-ext": "^2.0.5",
+    "config-js": "^1.1.14",
+    "express": "^4.17.1",
+    "kerberos": "^1.1.3",
+    "mongodb": "^3.6.0",
+    "mqtt": "^4.2.0"
+  }
+}
