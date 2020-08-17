@@ -19,12 +19,15 @@ const couch_url = 'http://' + couch_user + ':' + couch_password + '@' + couch_ho
 const nano = require('nano')(couch_url);
 
 mqtt_client.on('connect', function () {
-    client.subscribe("ukuli/#");
+    console.log("Connect");
+    client.subscribe("tietomeri/#");
 });
  
-client.on('message', function (topic, message) {
+mqtt_client.on('message', function (topic, message) {
   var topic = topic;
   var message = message;
+  console.log(topic);
+  console.log(message);
   couchSave(topic,message);
 });
 
