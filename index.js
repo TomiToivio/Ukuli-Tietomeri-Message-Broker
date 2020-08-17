@@ -18,6 +18,15 @@ const couch_database = config.get('couch.database');
 const couch_url = 'http://' + couch_user + ':' + couch_password + '@' + couch_host + ':' + couch_port; 
 const nano = require('nano')(couch_url);
 
+const redis_ip = config.get('mqtt.ip');
+const redis_port = config.get('mqtt.port');
+const redis_password = config.get('mqtt.password');
+const redis_db = config.get('mqtt.db');
+
+const redis = require("redis");
+const redis_client = redis.createClient({ host: redis_ip, port: redis_port, password: redis_password, db: redis_db});
+
+
 mqtt_client.on('connect', function () {
     console.log("Connect");
     mqtt_client.subscribe("tietomeri/#");
@@ -37,5 +46,12 @@ function couchSave(topic,message) {
     var doc = { topic: topic, message: message, time: unixtime };
     tietomeri_couch.insert(doc).then((body) => {
         console.log(body);
+    });
+}
+
+function redisSave(topic,message) {
+    redis_client.hmset("topic", ["message"], function(err, res) {
+	console.log(err);
+	console.log(res);
     });
 }
