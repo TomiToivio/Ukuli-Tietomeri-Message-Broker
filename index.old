@@ -10,7 +10,7 @@ const mqtt_password = config.get('mqtt.password');
 
 const mqtt = require('mqtt');
 const mqtt_client  = mqtt.connect('mqtt://' + mqtt_hostname + ":" + Number(mqtt_port));
-
+/*
 const couch_user = config.get('couch.user');
 const couch_password = config.get('couch.password');
 const couch_host = config.get('couch.host');
@@ -19,7 +19,7 @@ const couch_database = config.get('couch.database');
 
 const couch_url = 'http://' + couch_user + ':' + couch_password + '@' + couch_host + ':' + couch_port; 
 const nano = require('nano')(couch_url);
-
+*/
 const redis_ip = config.get('redis.ip');
 const redis_port = config.get('redis.port');
 const redis_password = config.get('redis.password');
@@ -38,7 +38,7 @@ mqtt_client.on('message', function (topic, message) {
   var message = "" + message + "";
   console.log(topic);
   console.log(message);
-  couchSave(topic,message);
+/*  couchSave(topic,message); */
 });
 
 function couchSave(topic,message) {

@@ -1,26 +1,16 @@
 module.exports = {
-    mqtt : {
-        clientId: 'ukuliSimulator',              
-        hostname: '127.0.0.1',
-        port: 1883,
-        userName: 'ukuli',
-        password: 'ukuli',
+    aedes : {
+        mq: 'mqemitter',              
+        concurrency: 100,
+        persistence: aedes-persistence,
+        queueLimit: 42,
+        maxClientsIdLength: 23,
+        heartbeatInterval: 60000,
+        id: uuidv4(),
+        connectTimeout; 30000,
+        username: 'ukuli',
+        password: 'ukuli'
     },
-    couch: {
-        user: 'ukuli',
-        password: 'ukuli',
-        host: '127.0.0.1',
-        port: 5984,
-        database: 'tietomeri',
-    }
-    api: {
-        user: 'ukuli',
-        password: 'ukuli',
-    }
-    redis: {
-	ip: '127.0.0.1',
-	port: 6379,
-	password: 'ukuli',
-	db: 0,
-}
 };
+
+
