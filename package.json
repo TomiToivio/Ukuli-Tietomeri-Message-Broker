@@ -21,6 +21,10 @@
   },
   "homepage": "https://github.com/Ukuli-Data/Ukuli-Tietomeri-Message-Broker#readme",
   "dependencies": {
+    "aedes": "^0.42.5",
+    "aedes-logging": "^2.0.1",
+    "aedes-persistence-mongodb": "^8.1.1",
+    "aedes-stats": "^4.0.0",
     "assert": "^2.0.0",
     "async": "^3.2.0",
     "body-parser": "^1.19.0",
