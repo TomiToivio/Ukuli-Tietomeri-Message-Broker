@@ -9,7 +9,8 @@ module.exports = {
         id: uuidv4(),
         connectTimeout; 30000,
         username: 'ukuli',
-        password: 'ukuli'
+        password: 'ukuli',
+        port: 1883
     },
 };
 
